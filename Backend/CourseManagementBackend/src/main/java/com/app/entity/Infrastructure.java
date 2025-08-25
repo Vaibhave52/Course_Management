@@ -37,6 +37,7 @@ public class Infrastructure {
 
 	@Column(name = "title", nullable = false, length = 30)
 	private String title;
+
 	@Enumerated(EnumType.STRING)
 	private InfrastructureType infrastructureType;
 
