@@ -7,7 +7,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import com.app.dto.InfrastructureDto;
 import com.app.entity.Infrastructure;
 import com.app.entity.Premises;
@@ -37,7 +36,7 @@ public class InfrastructureServiceImpl implements InfrastructureService {
 		log.info("In service Layer {}", infrastructureDto);
 
 		Premises premises = premisesRepository.findById(infrastructureDto.getPremisesId())
-				
+
 				.orElseThrow(() -> new ResourseNotFoundException(
 
 						"Premises is Not found with given id : " + infrastructureDto.getPremisesId()));
