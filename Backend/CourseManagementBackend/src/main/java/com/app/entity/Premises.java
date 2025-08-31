@@ -29,12 +29,12 @@ public class Premises {
 	private Long premisesId;
 
 	@Column(name = "institute_name", nullable = false, length = 50)
-	private String instituteName;
+	private String instituteNames;
 
-	@Column(name = "address", nullable = false, length = 150, unique = true)
-	private String address;
+	@Column(name = "address", nullable = false, length = 150)
+	private String addresses;
 
 	@Column(name = "description", nullable = false, length = 200)
-	private String description;
+	private String descriptions;
 
 }

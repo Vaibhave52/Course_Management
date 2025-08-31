@@ -39,14 +39,14 @@ public class PremisesController {
 		return ResponseEntity.ok(pre);
 	}
 	
-	@DeleteMapping("/delete/{premisesId}")
+	@DeleteMapping("/{premisesId}")
 	public ResponseEntity<?> deletePremise(@PathVariable Long premisesId)
 	{
 		String msg = premiseServ.deletePremise(premisesId);
 		return ResponseEntity.ok(msg);
 	}
 	
-	@PutMapping("/edit/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<?> editPremise(@RequestBody PremisesDto addPremiseDto , @PathVariable Long premisesId )
 	{
 		Premises pre = premiseServ.editPremise(addPremiseDto , premisesId);

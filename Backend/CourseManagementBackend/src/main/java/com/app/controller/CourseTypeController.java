@@ -30,7 +30,7 @@ public class CourseTypeController {
 	@Autowired
 	private CourseTypeService courseTypeService;
 
-	// create
+	
 
 	@PostMapping
 	public ResponseEntity<CourseTypeDto> createCourseType(@RequestBody CourseTypeDto courseTypeDto) {
@@ -42,7 +42,7 @@ public class CourseTypeController {
 
 	}
 
-	// update
+
 
 	@PutMapping("/{courseTypeId}")
 	public ResponseEntity<CourseTypeDto> updateCourseType(@RequestBody CourseTypeDto courseTypeDto,
@@ -55,7 +55,7 @@ public class CourseTypeController {
 
 	}
 
-	// getAll
+	
 
 	@GetMapping()
 	public ResponseEntity<List<CourseTypeDto>> getAllCourseType() {
@@ -66,7 +66,7 @@ public class CourseTypeController {
 
 	}
 
-	// getById
+	
 
 	@GetMapping("/{courseTypeId}")
 	public ResponseEntity<CourseTypeDto> getCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
@@ -77,7 +77,7 @@ public class CourseTypeController {
 
 	}
 
-	// delete
+	
 
 	@DeleteMapping("/{courseTypeId}")
 	public ResponseEntity<ApiResponse> deleteCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
