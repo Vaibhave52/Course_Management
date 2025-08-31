@@ -3,6 +3,7 @@ package com.app.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -39,7 +40,7 @@ public class CourseType  {
 	@Column(name = "description",nullable = false,length = 200)
 	private String description;
 	
-	@OneToMany(mappedBy = "courseType",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "courseType",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	private List<Course> courses;
 
 }
