@@ -11,9 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PremisesDto {
 
-	private String instituteName;
+	private String instituteNames;
 	
-	private String address;
+	private String addresses;
 	
-	private String description; 
+	private String descriptions; 
 }

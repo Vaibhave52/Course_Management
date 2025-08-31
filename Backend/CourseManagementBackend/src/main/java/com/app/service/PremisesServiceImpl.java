@@ -46,9 +46,9 @@ public class PremisesServiceImpl implements PremisesService {
 		Premises premise = premiseRepository.findById(premisesId)
 				.orElseThrow(() -> new RuntimeException("premise not found with id: " + premisesId));
 
-		premise.setInstituteName(addPremise.getInstituteName());
-		premise.setAddress(addPremise.getAddress());
-		premise.setDescription(addPremise.getDescription());
+		premise.setInstituteNames(addPremise.getInstituteNames());
+		premise.setAddresses(addPremise.getAddresses());
+		premise.setDescriptions(addPremise.getDescriptions());
 
 		return premiseRepository.save(premise);
 
