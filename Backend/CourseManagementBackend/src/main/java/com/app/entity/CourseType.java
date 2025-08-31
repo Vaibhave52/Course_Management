@@ -1,8 +1,8 @@
 package com.app.entity;
 
-
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,17 +27,17 @@ import lombok.ToString;
 @Setter
 @Builder
 @ToString
-public class CourseType  {
-	
+public class CourseType {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "course_type_id")
 	private Long courseTypeId;
-	
-	@Column(name = "title",nullable = false,length = 30)
+
+	@Column(name = "title", nullable = false, length = 30)
 	private String title;
-	
-	@Column(name = "description",nullable = false,length = 200)
+
+	@Column(name = "description", nullable = false, length = 200)
 	private String description;
 	
 	@OneToMany(mappedBy = "courseType",fetch = FetchType.EAGER,cascade = CascadeType.ALL)

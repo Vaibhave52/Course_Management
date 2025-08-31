@@ -1,7 +1,5 @@
 package com.app.controller;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.app.dto.CourseTypeDto;
-import com.app.entity.CourseType;
 import com.app.responsemessage.ApiResponse;
 import com.app.service.CourseTypeService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -30,8 +24,6 @@ public class CourseTypeController {
 	@Autowired
 	private CourseTypeService courseTypeService;
 
-	
-
 	@PostMapping
 	public ResponseEntity<CourseTypeDto> createCourseType(@RequestBody CourseTypeDto courseTypeDto) {
 
@@ -41,8 +33,6 @@ public class CourseTypeController {
 		return new ResponseEntity<CourseTypeDto>(courseTypeService.createCourseType(courseTypeDto), HttpStatus.CREATED);
 
 	}
-
-
 
 	@PutMapping("/{courseTypeId}")
 	public ResponseEntity<CourseTypeDto> updateCourseType(@RequestBody CourseTypeDto courseTypeDto,
@@ -55,8 +45,6 @@ public class CourseTypeController {
 
 	}
 
-	
-
 	@GetMapping()
 	public ResponseEntity<List<CourseTypeDto>> getAllCourseType() {
 
@@ -66,10 +54,8 @@ public class CourseTypeController {
 
 	}
 
-	
-
 	@GetMapping("/{courseTypeId}")
-	public ResponseEntity<CourseTypeDto> getCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
+	public ResponseEntity<CourseTypeDto> getCourseTypeById(@PathVariable Long courseTypeId) {
 
 		log.info("In controller layer coursetype id is {}", courseTypeId);
 
@@ -77,10 +63,8 @@ public class CourseTypeController {
 
 	}
 
-	
-
 	@DeleteMapping("/{courseTypeId}")
-	public ResponseEntity<ApiResponse> deleteCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
+	public ResponseEntity<ApiResponse> deleteCourseTypeById(@PathVariable Long courseTypeId) {
 
 		courseTypeService.deleteCourseType(courseTypeId);
 
