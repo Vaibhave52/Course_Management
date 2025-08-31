@@ -30,8 +30,6 @@ public class CourseTypeController {
 	@Autowired
 	private CourseTypeService courseTypeService;
 
-	// create
-
 	@PostMapping
 	public ResponseEntity<CourseTypeDto> createCourseType(@RequestBody CourseTypeDto courseTypeDto) {
 
@@ -41,8 +39,6 @@ public class CourseTypeController {
 		return new ResponseEntity<CourseTypeDto>(courseTypeService.createCourseType(courseTypeDto), HttpStatus.CREATED);
 
 	}
-
-	// update
 
 	@PutMapping("/{courseTypeId}")
 	public ResponseEntity<CourseTypeDto> updateCourseType(@RequestBody CourseTypeDto courseTypeDto,
@@ -55,8 +51,6 @@ public class CourseTypeController {
 
 	}
 
-	// getAll
-
 	@GetMapping()
 	public ResponseEntity<List<CourseTypeDto>> getAllCourseType() {
 
@@ -66,10 +60,8 @@ public class CourseTypeController {
 
 	}
 
-	// getById
-
 	@GetMapping("/{courseTypeId}")
-	public ResponseEntity<CourseTypeDto> getCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
+	public ResponseEntity<CourseTypeDto> getCourseTypeById(@PathVariable Long courseTypeId) {
 
 		log.info("In controller layer coursetype id is {}", courseTypeId);
 
@@ -77,10 +69,8 @@ public class CourseTypeController {
 
 	}
 
-	// delete
-
 	@DeleteMapping("/{courseTypeId}")
-	public ResponseEntity<ApiResponse> deleteCourseTypeById(@PathVariable(name = "courseTypeId") Long courseTypeId) {
+	public ResponseEntity<ApiResponse> deleteCourseTypeById(@PathVariable Long courseTypeId) {
 
 		courseTypeService.deleteCourseType(courseTypeId);
 

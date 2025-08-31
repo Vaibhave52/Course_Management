@@ -1,11 +1,7 @@
 package com.app.service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -72,7 +68,6 @@ public class CourseTypeServiceImpl implements CourseTypeService {
 
 	@Override
 	public CourseTypeDto getCourseTypeById(Long courseTypeId) {
-		// TODO Auto-generated method stub
 
 		log.info("In Service  layer coursetype id is {}", courseTypeId);
 
