@@ -44,7 +44,7 @@ public class Infrastructure {
 	@Column(name = "description", nullable = false, length = 200)
 	private String description;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn(name = "premise_id")
 	private Premises premises;
 
